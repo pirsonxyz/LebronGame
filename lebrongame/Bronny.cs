@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Input;
 
 namespace lebrongame
 {
-    
         public class Bronny : Game
         {
             Texture2D ballTexture;
