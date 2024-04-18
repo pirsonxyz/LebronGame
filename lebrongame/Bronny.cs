@@ -6,9 +6,9 @@ namespace lebrongame
 {
         public class Bronny : Game
         {
-            private Texture2D ballTexture;
-            private Vector2 ballPosition;
-            private float ballSpeed;
+            private Texture2D bronTexture;
+            private Vector2 bronPosition;
+            private float bronSpeed;
             private GraphicsDeviceManager _graphics;
             private SpriteBatch _spriteBatch;
 
@@ -22,10 +22,10 @@ namespace lebrongame
             protected override void Initialize()
             {
                 // TODO: Add your initialization logic here
-                this.ballPosition =
+                this.bronPosition =
                     new Vector2(this._graphics.PreferredBackBufferWidth / 2,
                                 this._graphics.PreferredBackBufferHeight / 2);
-                this.ballSpeed = 100f;
+                this.bronSpeed = 100f;
 
                 base.Initialize();
             }
@@ -35,7 +35,7 @@ namespace lebrongame
                 _spriteBatch = new SpriteBatch(GraphicsDevice);
 
                 // TODO: use this.Content to load your game content here
-                this.ballTexture = Content.Load<Texture2D>("lebron");
+                this.bronTexture = Content.Load<Texture2D>("lebron");
             }
 
             protected override void Update(GameTime gameTime)
@@ -48,47 +48,47 @@ namespace lebrongame
                 var kstate = Keyboard.GetState();
                 if (kstate.IsKeyDown(Keys.Up))
                 {
-                    ballPosition.Y -=
-                        ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    bronPosition.Y -=
+                        bronSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 }
                 if (kstate.IsKeyDown(Keys.Down))
                 {
-                    ballPosition.Y +=
-                        ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    bronPosition.Y +=
+                        bronSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 }
 
                 if (kstate.IsKeyDown(Keys.Left))
                 {
-                    ballPosition.X -=
-                        ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    bronPosition.X -=
+                        bronSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 }
 
                 if (kstate.IsKeyDown(Keys.Right))
                 {
-                    ballPosition.X +=
-                        ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    bronPosition.X +=
+                        bronSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 }
 
-                if (ballPosition.X >
-                    _graphics.PreferredBackBufferWidth - ballTexture.Width / 2)
+                if (bronPosition.X >
+                    _graphics.PreferredBackBufferWidth - bronTexture.Width / 2)
                 {
-                    ballPosition.X =
-                        _graphics.PreferredBackBufferWidth - ballTexture.Width / 2;
+                    bronPosition.X =
+                        _graphics.PreferredBackBufferWidth - bronTexture.Width / 2;
                 }
-                else if (ballPosition.X < ballTexture.Width / 2)
+                else if (bronPosition.X < bronTexture.Width / 2)
                 {
-                    ballPosition.X = ballTexture.Width / 2;
+                    bronPosition.X = bronTexture.Width / 2;
                 }
 
-                if (ballPosition.Y >
-                    _graphics.PreferredBackBufferHeight - ballTexture.Height / 2)
+                if (bronPosition.Y >
+                    _graphics.PreferredBackBufferHeight - bronTexture.Height / 2)
                 {
-                    ballPosition.Y =
-                        _graphics.PreferredBackBufferHeight - ballTexture.Height / 2;
+                    bronPosition.Y =
+                        _graphics.PreferredBackBufferHeight - bronTexture.Height / 2;
                 }
-                else if (ballPosition.Y < ballTexture.Height / 2)
+                else if (bronPosition.Y < bronTexture.Height / 2)
                 {
-                    ballPosition.Y = ballTexture.Height / 2;
+                    bronPosition.Y = bronTexture.Height / 2;
                 }
 
                 base.Update(gameTime);
@@ -101,8 +101,8 @@ namespace lebrongame
                 // TODO: Add your drawing code here
                 this._spriteBatch.Begin();
                 this._spriteBatch.Draw(
-                    this.ballTexture, this.ballPosition, null, Color.White, 0f,
-                    new Vector2(this.ballTexture.Width / 2, this.ballTexture.Height / 2),
+                    this.bronTexture, this.bronPosition, null, Color.White, 0f,
+                    new Vector2(this.bronTexture.Width / 2, this.bronTexture.Height / 2),
                     Vector2.One, SpriteEffects.None, 0f);
                 this._spriteBatch.End();
 
