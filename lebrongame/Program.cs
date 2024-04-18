@@ -1,3 +1,2 @@
-﻿
-using var game = new lebrongame.Bronny();
+﻿using var game = new lebrongame.Bronny();
 game.Run();
