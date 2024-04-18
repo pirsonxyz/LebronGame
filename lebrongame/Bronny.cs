@@ -6,9 +6,9 @@ namespace lebrongame
 {
         public class Bronny : Game
         {
-            Texture2D ballTexture;
-            Vector2 ballPosition;
-            float ballSpeed;
+            private Texture2D ballTexture;
+            private Vector2 ballPosition;
+            private float ballSpeed;
             private GraphicsDeviceManager _graphics;
             private SpriteBatch _spriteBatch;
 
